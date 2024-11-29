@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>2024年下半年上海市高等教育自学考试成绩查询</title>
+    	<link rel="stylesheet" href="static/css/style.css">
+<style>
+.info{
+        font-size: 14px;
+        color: #f00;
+        left: 310px;
+        top: 6px;
+        display: block;
+        position: absolute;
+        z-index: 999;
+        white-space:nowrap ;
+    }
+.search-form li{
+    position: relative;
+    overflow: visible;
+
+}
+.shuoming{
+    color: #252525;
+    line-height: 26px;
+    text-align:center;
+    margin-top: 30px;
+    font-size: 14px;
+ 
+    margin-top: 40px;
+}
+</style>
+<script>
+  function changeCode(){  document.getElementById("verify").src = "/shmeea/q/verifyImg?t="+ Math.random(); }
+  setTimeout(function(){document.getElementById("msg").innerHTML=''},6000)
+
+function sub(){
+            var inputs = document.forms[0].elements;
+            var valid=true;
+            for(var i=0;i<inputs.length;i++){
+                var input=inputs[i];
+                if(!input.value) {
+                    alert("请填写完整！");
+                    valid=false;
+                    return false;
+                }
+            }
+            valid && document.forms[0].submit();
+        }
+function sub(){
+    // 直接跳转到 result.html 页面
+    window.location.href = "result.html";  // 或者使用 window.location.replace("result.html");
+}
+
+</script>
+</head>
+<body>
+       <center style='color:red;' id="msg"><h3></h3></center>
+	<div class="logo"><img src="static/picture/logo.jpg" alt=""></div>
+	<h2 class="title">2024年下半年上海市高等教育自学考试成绩查询</h2>
+     <form method="post" action="javascript:;" onsubmit="submit()" name="form1"> <input type='hidden' value='07bc1bfe-86ca-4550-bfc4-04905fac01c5' name='examId'>
+          <ul class="search-form">
+<li><label>身份证号:</label><input type="text" value="" name="SFZH" required=""><span class="info">* 请输入身份证号</span></li>
+             <li><label>准考证号:</label><input id="ZKZH" type="password" value="" name="ZKZH" required=""><span class="info">* 请输入准考证号</span></li>
+             <li><label>验证码</label><input type="text" class="code" name="verifyCode" required=""><span class="info">* 按图中字符填写，不区分大小写</span><img id="verify" title="点击更换" onclick="changeCode();" src="static/picture/verifyImg.jpg"></li>
+            <li><a href="#" onclick="sub()" class="btn">查询</a></li>
+   
+            </ul>
+
+<div class="shuoming">建议使用：火狐浏览器、Chrome浏览器、IE10及以上版本的浏览器</div>
+        </form>
+
+</body>
+<script src="static/js/aes.js" type="text/javascript"></script>
+	<script src="static/js/crypto.js" type="text/javascript"></script>
+	<script src="static/js/mode-ecb-min.js" type="text/javascript"></script>
+</html>
